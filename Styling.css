@@ -1,0 +1,250 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #7d7d7d;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 10px;
+    min-height: 100vh;
+}
+
+p {
+    font-size: clamp(16px, 2vw, 24px);
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+#paper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    
+    padding: 20px;
+    background-image: url('paper.jpg');
+    background-size: cover;
+    background-repeat: repeat-y;
+    
+    width: 100%;
+    max-width: 920px;
+    min-height: 100vh;
+    height: auto;
+    
+    border: solid 8px black;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+#header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    
+    border-bottom: solid 2px black;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+#logo {
+    height: 120px;
+    width: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+#title h1 {
+    font-weight: bold;
+    font-size: clamp(28px, 5vw, 50px);
+    line-height: 1.1;
+    margin-bottom: 5px;
+}
+
+#title h3 {
+    font-size: clamp(18px, 3vw, 28px);
+    color: #333;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+}
+
+#intro {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    
+    padding-bottom: 20px;
+    border-bottom: solid 2px red;
+}
+
+#introLetter {
+    flex: 1 1 300px;
+}
+
+#introLetter p {
+    margin: 8px 0;
+}
+
+.high {
+    color: red;
+    font-weight: bold;
+}
+
+#myself {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    
+    border: solid 6px red;
+    margin: 0 auto;
+}
+
+#more {
+    padding: 20px 0;
+}
+
+#samples {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    padding-top: 20px;
+    border-top: solid 2px red;
+}
+
+.samp {
+    font-size: clamp(20px, 3.5vw, 36px);
+    margin: 10px 0;
+}
+
+#ll {
+    max-width: 100%;
+    width: 500px;
+    height: auto;
+    object-fit: cover;
+    
+    border: solid 6px black;
+    margin: 15px 0;
+}
+
+#tb, #witch {
+    color: red;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+#tb:hover, #witch:hover {
+    color: darkred;
+}
+
+/* Light Blearing Alarm */
+.alarm-light {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: clamp(300px, 50vw, 600px);
+    height: clamp(300px, 50vw, 600px);
+    pointer-events: none;
+    background: radial-gradient(circle at top right, rgba(255, 0, 0, 0.8) 0%, rgba(255, 0, 0, 0.3) 40%, transparent 75%);
+    z-index: 999;
+    animation: alarm-pulse 2s infinite alternate ease-in-out;
+}
+
+@keyframes alarm-pulse {
+    0% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Blood Trickle Stains */
+.blood-trickle {
+    position: absolute;
+    background: radial-gradient(ellipse at center, rgba(138, 3, 3, 0.85) 0%, rgba(90, 2, 2, 0.5) 60%, transparent 85%);
+    border-radius: 40% 60% 50% 50% / 60% 40% 60% 40%;
+    pointer-events: none;
+    z-index: 998;
+}
+
+#b1 {
+    width: 150px;
+    height: 150px;
+    left: 20px;
+    bottom: 50px;
+    animation: stain-fade-bottom-left 2s infinite ease-in-out;
+}
+
+#b2 {
+    width: 30px;
+    height: 30px;
+    left: 120px;
+    bottom: 180px;
+    animation: stain-fade-bottom-left 2.5s infinite ease-in-out;
+}
+
+@keyframes stain-fade-bottom-left {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Modal Samples / Popups */
+.robo, .magic {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    max-width: 90vw;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    
+    z-index: 1000;
+    border: solid 8px black;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    background-color: white;
+}
+
+.robo.active, .magic.active {
+    display: block;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+    #header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    #logo {
+        margin-bottom: 10px;
+    }
+
+    #paper {
+        padding: 15px;
+        border-width: 5px;
+    }
+}
