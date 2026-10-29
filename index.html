@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         
+         <title>SCP Foundation Style Portfolio</title>
+         
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!--CSS file-->
+        <link rel="stylesheet" href="Styling.css">
+        
+      </head>
+      <body>
+          <!--Samples-->
+          <img class="robo" src="TB.png" alt="Terrabitha" title="Daughter">
+          <img class="magic" src="green.png" alt="Dendro witch" title="Witch">
+          
+          <!--dyanamic-->
+          <div class="alarm-light"></div>
+          <div id="b1" class="blood-trickle"></div>
+          <div id="b2" class="blood-trickle"></div>
+          
+      
+        <div id="paper">
+            <div id="header">
+                <img id="logo" src="SCP.jpg" alt="SCP FOUNDATION LOGO" title="Secure, Contain, Protect">
+                <div id="title">
+                    <h1>THE SCP FOUNDATION</h1>
+                    <h3>To Secure, Contain, Protect</h3>
+                </div>
+            </div>
+            <div id="main">
+                <div id="intro">
+                    <div id="introLetter">
+                        <p><span class="high">Name:</span> Lester George C. Casalta</p>
+                        <p><span class="high">Gender: </span> Male</p>
+                        <p><span class="high">Status: </span> Single</p>
+                        <p><span class="high">Nationality: </span> Philippines</p>
+                    </div>
+                    <img id="myself" src="Me.jpeg" alt="picture_me" title="Casalta">
+                </div>
+            </div>
+            <div id="more">
+                    <p><span class="high">Skills: </span>Drawing and Coding</p>
+                    <p><span class="high">Strength: </span>can easily understand any complicated problems or knowledge related to digital space</p>
+                    <p><span class="high">Drawing Apps Used: </span>IbisPaint</p>
+                    <p><span class="high">Coding Language Used: </span>HTML, CSS, JavaScript, Python, C++, Java</p>
+                    <p><span class="high">Hobbies: </span>Playing Games</p>
+             </div>
+             <div id="samples">
+             <p class="samp"><span class="high">Samples of work: </span><p>
+                 <img id="ll" src="LandL.png" alt="Two love birds" title="My OC and his wife">
+                 <p class="samp">Here are more examples:</p>
+                 <p class="samp"><span id="tb">Click ME!</span> and <span id="witch">Me too!</span><p>
+                 <p style="color: gray">(Please press any interactable things twice for the images to go away)</p>
+             </div>
+        </div>
+        
+        <script>
+            const tbBtn = document.querySelector('#tb');
+            const witchBtn = document.querySelector('#witch');
+            let rp = document.querySelector('.robo');
+            let wp = document.querySelector('.magic');
+            
+            tbBtn.addEventListener ('click', () => {
+                rp.classList.toggle('active');
+            })
+            
+            witchBtn.addEventListener ('click', () => {
+                wp.classList.toggle('active');
+            })
+            
+        </script>
+      </body>
+</html>
