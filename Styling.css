@@ -186,7 +186,7 @@ p {
 #b1 {
     width: 150px;
     height: 150px;
-    left: 20px;
+    left: 5%;
     bottom: 50px;
     animation: stain-fade-bottom-left 2s infinite ease-in-out;
 }
@@ -194,7 +194,7 @@ p {
 #b2 {
     width: 30px;
     height: 30px;
-    left: 120px;
+    left: 15%;
     bottom: 180px;
     animation: stain-fade-bottom-left 2.5s infinite ease-in-out;
 }
